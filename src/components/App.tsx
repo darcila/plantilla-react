@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {ExampleService} from "../application";
+import {ExampleHttpRepository} from "../infrastructure/repositories";
 
 function App() {
+  const repository = new ExampleHttpRepository();
+  const service = new ExampleService(repository);
   return (
     <div className="App">
       <header className="App-header">
